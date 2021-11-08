@@ -1,6 +1,6 @@
 # Interaktion zwischen einem Gebäudedatenmodell und einer verorteten Gebäudebegehung
 
-Die Daten des Trackers liegen als Textdatei (punkte-testdaten.txt) vor. Diese Datei muss in dem Ordner des dazugehörigen Desite-Projektes gespeichert werden.
+Die Daten des Trackers liegen als Textdatei (punkte-testdaten.txt) vor. Diese Datei wird in dem Ordner des dazugehörigen Projektes abgelegt.
 ![Daten des Trackers](./doc/img/tracker-daten.jpg)
 
 Als nächstes wird ein Container in Desite angelegt, in dem die Punkte später gespeichert werden. Die cp:ID des Containers wird in das Skript übernommen.
@@ -38,7 +38,9 @@ Auf Basis der Referenzpunkte erfolgt die Translation der Objekte auf die korrekt
 Über die Kollionsprüfung von Desite werden die Räume ausgelesen, in denen sich die Objekte befinden. Dafür werden zwei Prüfmengen benötigt. 
 
 1. Prüfmenge -> Die erzeugten Punktobjekte
-2. Prüfmenge -> Die Räume des IFC-Modell
+2. Prüfmenge -> IFC Space Entities der IFC (Über einen Filter ausgewählt)
+
+![Kollisionsprüfung](./doc/img/kollisionsprüfung.jpg)
 
 Wenn es eine Überschneidung von einem Punktobjekt und einem Raum gibt, wird der Name des Raums als Attribut des Punktes hizugefügt.
 
@@ -48,6 +50,13 @@ var strRaumName = desiteAPI.getPropertyValue(desiteRight.ID(),"bs:SectionName","
 //den raumnamen in dem punkt aktualisieren
 desiteAPI.setPropertyValue(desiteLeft.ID(),"Raum","xs:string",strRaumName);
 ```
+![Raumbezeichnung als Attribut](./doc/img/raumnummer-als-attribute.jpg)
 
 ## Bilder zuordnen (assignImages.js)
-Während der Begehung werden Bilder gemacht, deren Aufnahmezeit in die Dateinamen der Bilder geschrieben wird. Über den Timestamp der Punktobjekte können die Bilder als Attribute an die Punkte angehängt werden. Als Attribut wird der Pfad des Bildes verwendet.
+Während der Begehung werden Bilder gemacht, deren Aufnahmezeit in die Dateinamen der Bilder geschrieben wird. 
+
+``` JS
+JPEG_20200708_121238_2048566100.jpg
+```
+
+Über den Timestamp der Punktobjekte können die Bilder als Attribute an die Punkte angehängt werden. Als Attribut wird der Pfad des Bildes verwendet.
