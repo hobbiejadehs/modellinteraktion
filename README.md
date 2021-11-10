@@ -78,7 +78,7 @@ Daraufhin wird für jeden Punkt des Tracks ein Objekt in dem angelegten Containe
 
 ![Objekte im Modell](./doc/img/objekte-im-modell.jpg)
 
-## Den Punktobjekten die Räume zuordnen
+## Punktobjekten Räume zuordnen
 
 Über die Funktion Kollionsprüfung werden den einzelnen Punktobjekten die Raumnamen als Attribute hinzugefügt.
 
