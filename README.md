@@ -1,5 +1,9 @@
 # Interaktion zwischen einem Gebäudedatenmodell und einer verorteten Gebäudebegehung
 
+## Beispiel Workflow als Video bei Youtube
+
+[![Youtube Tutorial](./doc/img/youtube.jpg)](https://youtu.be/i-E0W5LkjS8 "Besipiel Workflow Youtube")
+
 Die Daten des Trackers liegen als Textdatei (punkte-testdaten.txt) vor. Diese Datei wird in dem Ordner des dazugehörigen Projektes abgelegt.
 ![Daten des Trackers](./doc/img/tracker-daten.jpg)
 
