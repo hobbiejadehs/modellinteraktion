@@ -1,16 +1,31 @@
 # Interaktion zwischen einem Gebäudedatenmodell und einer verorteten Gebäudebegehung
 
-## Beispiel Workflow als Video bei Youtube
+Dieser Beitrag beschreibt die Überlagerung eines Gebäudeinformationsmodells (BIM) mit Informationen aus einer Gebäudebegehung und den dabei aufgenommenen Informationen wie Bildern oder Kommentaren. Die Daten aus dem Bewegungspfad werden mit einem autonomen Innenraum Positionierungssystem (Indoor Position System bzw. IPS) erzeugt.  Die Informationen aus dem Bewegungspfad werden automatisch den Räumen aus einem Industrial Fundation Class (IFC) Modell zugeordnet. Die vorgestellte Anwendung bietet einen offenen BIM-Ansatz für eine robuste und effiziente Datenüberlagerung. Der Ansatz kann ebenfalls für eine Echtzeit-Lokalisierung bzw. Simultaneous Localization and Mapping (SLAM) auf einem mobilen Endgerät verwendet werden.
+
+## Beispiel Workflow ansehen
 
 [![Youtube Tutorial](./doc/img/youtube.jpg)](https://youtu.be/i-E0W5LkjS8 "Besipiel Workflow Youtube")
 
-Die Daten des Trackers liegen als Textdatei (punkte-testdaten.txt) vor. Diese Datei wird in dem Ordner des dazugehörigen Projektes abgelegt.
-![Daten des Trackers](./doc/img/tracker-daten.jpg)
+> Für dieses Beispiel wird DESITE MD Version 2.6.1 verwendet.
+> 
+### Vorbereitung
 
-Als nächstes wird ein Container in Desite angelegt, in dem die Punkte später gespeichert werden. Die cp:ID des Containers wird in das Skript übernommen.
+Die Daten des Trackers liegen als Textdatei **(siehe punkte-testdaten.txt)** vor. Diese Datei wird in dem Ordner des dazugehörigen Projektes abgelegt.
 
-Vor der Ausführung des Skriptes kann der Durchmesser der Punkte, die ID des Containers und der Pfad zu der Textdatei mit den Daten des Trackers angepasst werden.
+### Schritt 1 - Container für Trackingpunkte anlegen
+Einen Container anlegen, in dem die Trackingpunkte später gespeichert werden.
+![Container anlegen](doc/img/container-anlegen.jpg)
+### Schritt 2 - cp:ID des Containers kopieren
+Einen Container anlegen, in dem die Trackingpunkte später gespeichert werden.
+![ID kopieren](doc/img/cpID-container.jpg)
+### Schritt 3 - Das Skript (readAndTransform.js) importieren
+Skripte aufrufen
 
+![Skripte aufrufen](doc/img/skripte%20aufrufen.jpg)
+
+Das Skript **readAndTransform.js** importieren
+
+![Skripte aufrufen](doc/img/skript%20importieren.jpg)
 ``` JS
 //durchmesser der Punkte/Objekte in Meter
 var durchmesserPunkte = 0.1;
